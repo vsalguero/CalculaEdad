@@ -1,9 +1,7 @@
 package com.example.calculaedad
-//import kotlinx.android.synthetic.main.activity_main.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
