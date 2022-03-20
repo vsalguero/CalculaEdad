@@ -16,7 +16,8 @@
 
     <style name="DatePickerTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">#FFA726</item>
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
     </style>
 </resources>
