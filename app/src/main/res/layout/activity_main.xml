@@ -40,6 +40,14 @@
         android:textSize="32sp"
         android:textStyle="bold" />
 
+    <com.yodo1.mas.banner.Yodo1MasBannerAdView
+        xmlns:masads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/yodo1_mas_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        masads:adSize="SmartBanner" />
+
 </LinearLayout>
 
 <LinearLayout
@@ -56,9 +64,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="8dp"
-        android:text="www.vladi.codes"
+        android:text="Code in vladi.codes"
         android:textColor="#ffffff"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </LinearLayout>
