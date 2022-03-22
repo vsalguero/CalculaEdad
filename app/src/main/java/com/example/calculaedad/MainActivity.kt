@@ -5,13 +5,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.yodo1.mas.Yodo1Mas
 import com.yodo1.mas.banner.Yodo1MasBannerAdListener
+import com.yodo1.mas.banner.Yodo1MasBannerAdView
 import com.yodo1.mas.error.Yodo1MasError
 import com.yodo1.mas.helper.model.Yodo1MasAdBuildConfig
-import com.yodo1.mas.banner.Yodo1MasBannerAdView;
+import java.lang.String
+import kotlin.Int
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,10 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         Yodo1Mas.getInstance().init(this, "2UonxT9JwP", object : Yodo1Mas.InitListener {
             override fun onMasInitSuccessful() {
-                Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@MainActivity, "[Yodo1 Mas] Successful initialization", Toast.LENGTH_SHORT).show()
             }
             override fun onMasInitFailed(error: Yodo1MasError) {
-                Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -75,13 +76,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDatePickerDialog() {
-        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+            val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
         datePicker.show(supportFragmentManager, "datePicker")
     }
 
     private fun onDateSelected(day: Int, month: Int, year: Int) {
+        val rmonth = month + 1;
         var etDate = findViewById(R.id.etDate) as EditText;
-        etDate.setText("$day/$month/$year");
+        if(rmonth < 10){
+            etDate.setText("$day/0$rmonth/$year");
+        }else{
+            etDate.setText("$day/$rmonth/$year");
+        }
+
         getAge(year,month,day)
     }
 

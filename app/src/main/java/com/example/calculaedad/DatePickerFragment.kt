@@ -20,7 +20,6 @@ class DatePickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
         val picker = DatePickerDialog(activity as Context, R.style.DatePickerTheme, this, year, month, day)
-        c.add(Calendar.YEAR, -0)
         picker.datePicker.maxDate = c.timeInMillis
         return picker
     }
